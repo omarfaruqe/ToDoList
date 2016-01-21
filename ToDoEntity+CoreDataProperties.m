@@ -2,7 +2,7 @@
 //  ToDoEntity+CoreDataProperties.m
 //  ToDoManager
 //
-//  Created by Omar Faruqe on 2016-01-17.
+//  Created by Omar Faruqe on 2016-01-21.
 //  Copyright © 2016 Omar Faruqe. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,8 +13,10 @@
 
 @implementation ToDoEntity (CoreDataProperties)
 
-@dynamic toDoTitle;
-@dynamic toDoDetails;
 @dynamic toDoDate;
+@dynamic toDoDetails;
+@dynamic toDoTitle;
+@dynamic toDoContext;
+@dynamic toDoPriority;
 
 @end

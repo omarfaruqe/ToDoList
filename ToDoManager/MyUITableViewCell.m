@@ -28,6 +28,8 @@
     
     self.toDoTitleLabel.text = incomingToDoEntity.toDoTitle;
     self.localToDoEntity = incomingToDoEntity;
+    self.toDoPriorityLabel.text = incomingToDoEntity.toDoPriority;
+    self.toDoContextLabel.text = incomingToDoEntity.toDoContext;
     self.toDoDueDateLabel.text = [dateFormatter stringFromDate:incomingToDoEntity.toDoDate];
 }
 

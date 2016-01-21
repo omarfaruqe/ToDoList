@@ -13,6 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *toDoTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toDoDueDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *toDoContextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *toDoPriorityLabel;
+
+
 @property (strong, nonatomic) ToDoEntity  *localToDoEntity;
 
 - (void) setInternalFields:(ToDoEntity *)incomingToDoEntity;

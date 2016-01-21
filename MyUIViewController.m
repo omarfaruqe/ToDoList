@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *detailsField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dueDateFiled;
+@property (weak, nonatomic) IBOutlet UITextField *contextField;
+@property (weak, nonatomic) IBOutlet UITextField *priorityField;
 
 @property (nonatomic, assign) BOOL wasDeleted;
 
@@ -58,10 +60,14 @@
     }
 }
 
+
 - (void) viewDidAppear:(BOOL)animated {
     self.wasDeleted = NO;
     self.titleField.text = self.localToDoEntity.toDoTitle;
     self.detailsField.text = self.localToDoEntity.toDoDetails;
+    
+    self.priorityField.text = self.localToDoEntity.toDoPriority;
+    self.contextField.text = self.localToDoEntity.toDoContext;
     
     NSDate *dueDate = self.localToDoEntity.toDoDate;
     if (dueDate != nil) {
@@ -75,6 +81,17 @@
     self.localToDoEntity.toDoTitle = self.titleField.text;
     [self saveMyToDoEntity];
 }
+- (IBAction)contextFieldEditing:(id)sender {
+    self.localToDoEntity.toDoContext = self.contextField.text;
+    [self saveMyToDoEntity];
+    
+}
+- (IBAction)priorityFieldEditing:(id)sender {
+    self.localToDoEntity.toDoPriority = self.priorityField.text;
+    [self saveMyToDoEntity];
+}
+
+
 
 - (void) saveMyToDoEntity {
     NSError *err;
@@ -95,6 +112,8 @@
         self.localToDoEntity.toDoTitle = self.titleField.text;
         self.localToDoEntity.toDoDetails = self.detailsField.text;
         self.localToDoEntity.toDoDate = self.dueDateFiled.date;
+        self.localToDoEntity.toDoContext = self.contextField.text;
+        self.localToDoEntity.toDoPriority = self.priorityField.text;
         [self saveMyToDoEntity];
     }
     
